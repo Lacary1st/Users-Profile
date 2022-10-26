@@ -43,34 +43,12 @@
 
               // location
               let locate = result = response.results[0].location;
-              let myLocation=`<br>Street:`+ `<br>number:`+locate.street.number+ `<br>name:`+ locate.street.name;
+              let myLocation=`<br>Street:`+ `<br>number:`+locate.street.number+ `<br>Name:`+ locate.street.name + `<br>City:` +locate.city + `<br>State:`+locate.state +`<br>Country:` + locate.country+ `<br>Postcode:` + locate.postcode +`<br>Timezone:<br>`+`Offset:`+locate.timezone.offset +`<br>Description:`+locate.timezone.description;
               document.querySelector('#location').innerHTML=`<b>LOCATION: </b>` + myLocation;
       
-            //   let cities = response.results[0];
-            //   let myCity = cities.city;
-            //   document.querySelector('#city').innerHTML=`<b>CITY: </b>`+myCity;
-            // console.log(city)
-              
-      
-            //   let origin = response.results[0].state;
-            //   let mystate = origin.state;
-            //   document.querySelector('#state').innerHTML= `<b>STATE: </b>`+mystate;
-      
-            //   let countries = result = response.results[0];
-            //   let myCountry = countries.country;
-            //   document.querySelector('#country').innerHTML= `<b>COUNTRY: </b>`+myCountry;
-      
-            //   let post = result = response.results[0];
-            //   let postalcode = post.postcode;
-            //   document.querySelector('#postcode').innerHTML= `<b>POSTCODE: </b>`+ postalcode;
-      
-            //   let longlang = result = response.results[0].coordinates;
-            //   let distance = longlang.coordinates.latitude + longlang.coordinates.longitude;
-            //   document.querySelector('#cordinates').innerHTML=`<b>COORDINATES: </b>`+ distance;
-
+            
                 // nat
               let nationality = result = response.results[0].nat;
-            //   let myNationality = nationality.nat;
               document.querySelector('#nat').innerHTML= `<b>NATIONALITY: </b>`+ nationality;
 
 
@@ -84,13 +62,8 @@
 
               // id
               let id = result = response.results[0].id;
-              let details = `<br> Name:  id.name <br> Value:` + id.value;
+              let details = `<br> Name:`+  id.name + `<br> Value:` + id.value;
               document.querySelector('#id').innerHTML= `<b>ID: </b>` +details;
-
-              // let timezon = result = response.results[0].timezone;
-              // let time=`<br>Timezone:`+ `<br>offset:`+timezon.time.offset+ `<br>decription:`+ timezon.time.description;
-              // document.querySelector('#timezone').innerHTML=`<b>TIMEZONE: </b>` + time;
-
 
                 // info
               let information = result = response.info;
@@ -99,10 +72,10 @@
 
               // // login
       
-              // let logIn = result = response.results[0].login;
-              // var logindetails= `<br> Login:` + logIn.login.uuid+ `<br> Username: ` + logIn.username + `<br> Password: ` + logIn.password + `<br> Salt: ` + logIn.salt `<br> Md5: ` + logIn.md5 + `<br> Shal: ` + logIn.shal+ `<br> Sha256: ` + logIn.sha256;
-              // document.querySelector('#login').innerHTML=`<b>LOGIN:</B> ` +logindetails;
-              // // console.log(logindetails)
+              let log = result = response.results[0].login;
+              let logindetails= ` Login:<br>` + log.uuid+ `<br> Username: ` + log.username + `<br> Password: ` + log.password + `<br> Salt: ` + log.salt `<br> Md5: ` + log.md5 + `<br> Shal: ` + log.shal+ `<br> Sha256: ` + log.sha256;
+              document.querySelector('#login').innerHTML=`<b>LOGIN:</B> ` + logindetails;
+              
               
           }).catch(err =>{
               console.log(err)
